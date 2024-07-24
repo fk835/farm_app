@@ -11,6 +11,13 @@
     <li>Price: $<%= product.price  %></li>
     <li>Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
   </ul>
+  <h2>Farms</h2>
+  <ul>
+    <% for(let f of product.farms){ %>
+        <li><a href="/farms/<%= f._id %>"><%= f.name %></a></li>
+    <% } %>
+  </ul>
+
 
   <a href="/products">All Products</a>
   <a href="/products/<%= product.id %>/edit">Edit Product</a>

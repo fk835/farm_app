@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const { Schema } = mongoose;
 
-const productSchema = new mongoose.Schema({
+const productSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -14,9 +15,15 @@ const productSchema = new mongoose.Schema({
     type: String,
     enum: ['fruit', 'vegetable', 'dairy'],
     lowercase: true
-  }
+  },
+  farms: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Farm'
+    }
+  ]
 })
 
 const Product = new mongoose.model('Product', productSchema)
 
-module.exports = Product
+module.exports = Product;

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FARMS</title>
+</head>
+<body>
+  <h1>Farm</h1>
+  <a href="/farms/new">Add New </a>
+  <ul>
+  <% for(let f of farms){ %>
+    <li><a href="/farms/<%= f._id %>"><%= f.name  %></a></li>
+  <% } %>
+  </ul>
+
+</body>
+</html>
